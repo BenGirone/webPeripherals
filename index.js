@@ -11,7 +11,6 @@ app.get('/lib/socket.io.js', (req, res) => {
 
 app.use('/', express.static('public'));
 
-let mousePos = robot.getMousePos();
 robot.setMouseDelay(0.5);
 
 io.on('connection', (socket) => {
@@ -29,7 +28,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('touchPadPos', (pos) => {
-        mouse_pos = robot.getMousePos();
+        const mouse_pos = robot.getMousePos();
         robot.moveMouseSmooth((mouse_pos.x > pos.x) ? (mouse_pos.x - pos.x) : 0, (mouse_pos.y > pos.y) ? (mouse_pos.y - pos.y) : 0);
     });
 
