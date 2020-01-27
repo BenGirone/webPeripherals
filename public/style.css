@@ -1,0 +1,34 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#hiddenInput {
+    width: 100%;
+    text-align: center;
+}
+
+#mouseBox {
+    background-color: black;
+}
+
+#mouseButtons {
+    display: flex;
+    width: 100%;
+    height: 100px;
+}
+
+.mouseButton {
+    height: 100%;
+    background-color: red;
+    flex: 3;
+}
+
+.mouseScroll {
+    height: 100%;
+    background-color: blue;
+    flex: 2;
+}
