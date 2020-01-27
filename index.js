@@ -5,6 +5,10 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 const robot = require('robotjs');
 
+app.get('/lib/socket.io.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'node_modules/socket.io-client/dist/socket.io.slim.js'));
+});
+
 app.use('/', express.static('public'));
 
 let mousePos = robot.getMousePos();
